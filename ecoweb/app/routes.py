@@ -71,7 +71,7 @@ def init_routes(app):
                 print(f"Error processing optimized files: {str(e)}")
                 return "Error processing files", 500
 
-        return render_template('index.html')
+        return render_template('에코웹8-화이트.html')            #^ 이부분 수정후 기본경로 수정
 
     @app.route('/result')
     def result():
