@@ -1,0 +1,713 @@
+<div class="cssscan-grid-show">
+
+
+    <div class="traffic-container">
+      <div class="row justify-content-center mt-5">
+        <div class="col-md-8">
+          <h1 class="text-center mb-4">트래픽 등급 결과</h1>
+  
+          <!-- 등급 표시 -->
+          <div class="mt-4">
+            <h3 id="grade" class="text-center">등급: {{ grade }}</h3>
+            <div class="progress mt-4">
+              <div id="gradeBar" class="progress-bar" role="progressbar" style="width: 0%;">{{ grade }}</div>
+            </div>
+          </div>
+  
+          <!-- 탄소 배출량 시각화 -->
+          <div class="row mt-5">
+            <div class="col-md-3 carbon-metric">
+              <div class="carbon-icon">☕</div>
+              <p>커피 2잔 분량의<br>탄소 배출량</p>
+            </div>
+            <div class="col-md-3 carbon-metric">
+              <div class="carbon-icon">🚗</div>
+              <p>자동차 2km 주행<br>배출량과 동일</p>
+            </div>
+            <div class="col-md-3 carbon-metric">
+              <div class="carbon-icon">📱</div>
+              <p>스마트폰 4시간<br>충전량과 동일</p>
+            </div>
+            <div class="col-md-3 carbon-metric">
+              <div class="carbon-icon">🌳</div>
+              <p>나무 1그루의<br>2일 흡수량</p>
+            </div>
+          </div>
+          <svg width="800" height="500">
+            <g transform="translate(40,20)">
+              <g class="axis axis--x" transform="translate(0,450)" fill="none" font-size="10" font-family="sans-serif" text-anchor="middle">
+                <path class="domain" stroke="currentColor" d="M0.5,6V0.5H740.5V6"></path>
+                <g class="tick" opacity="1" transform="translate(19.5,0)">
+                  <line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">100</text>
+                </g>
+                <g class="tick" opacity="1" transform="translate(106.5,0)">
+                  <line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">200</text>
+                </g>
+                <g class="tick" opacity="1" transform="translate(193.5,0)">
+                  <line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">300</text>
+                </g>
+                <g class="tick" opacity="1" transform="translate(280.5,0)">
+                  <line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">400</text>
+                </g>
+                <g class="tick" opacity="1" transform="translate(367.5,0)">
+                  <line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">500</text>
+                </g>
+                <g class="tick" opacity="1" transform="translate(454.5,0)">
+                  <line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">600</text>
+                </g>
+                <g class="tick" opacity="1" transform="translate(541.5,0)">
+                  <line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">700</text>
+                </g>
+                <g class="tick" opacity="1" transform="translate(628.5,0)">
+                  <line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">800</text>
+                </g>
+                <g class="tick" opacity="1" transform="translate(715.5,0)">
+                  <line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">900</text>
+                </g>
+              </g>
+              <g class="axis axis--y" fill="none" font-size="10" font-family="sans-serif" text-anchor="end">
+                <path class="domain" stroke="currentColor" d="M-6,450.5H0.5V0.5H-6"></path>
+                <g class="tick" opacity="1" transform="translate(0,450.5)">
+                  <line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">0</text>
+                </g>
+                <g class="tick" opacity="1" transform="translate(0,405.5)">
+                  <line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">200</text>
+                </g>
+                <g class="tick" opacity="1" transform="translate(0,360.5)">
+                  <line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">400</text>
+                </g>
+                <g class="tick" opacity="1" transform="translate(0,315.5)">
+                  <line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">600</text>
+                </g>
+                <g class="tick" opacity="1" transform="translate(0,270.5)">
+                  <line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">800</text>
+                </g>
+                <g class="tick" opacity="1" transform="translate(0,225.5)">
+                  <line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">1,000</text>
+                </g>
+                <g class="tick" opacity="1" transform="translate(0,180.5)">
+                  <line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">1,200</text>
+                </g>
+                <g class="tick" opacity="1" transform="translate(0,135.50000000000003)">
+                  <line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">1,400</text>
+                </g>
+                <g class="tick" opacity="1" transform="translate(0,90.49999999999999)">
+                  <line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">1,600</text>
+                </g>
+                <g class="tick" opacity="1" transform="translate(0,45.49999999999999)">
+                  <line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">1,800</text>
+                </g>
+                <g class="tick" opacity="1" transform="translate(0,0.5)">
+                  <line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">2,000</text>
+                </g>
+              </g>
+              <rect class="bar" x="0" y="449.77500000000003" width="1" height="0.2249999999999659" fill="steelblue"></rect>
+              <rect class="bar" x="2" y="449.55" width="16" height="0.44999999999998863" fill="steelblue"></rect>
+              <rect class="bar" x="19" y="449.77500000000003" width="17" height="0.2249999999999659" fill="steelblue"></rect>
+              <rect class="bar" x="37" y="449.55" width="16" height="0.44999999999998863" fill="steelblue"></rect>
+              <rect class="bar" x="54" y="449.32500000000005" width="16" height="0.6749999999999545" fill="steelblue"></rect>
+              <rect class="bar" x="71" y="449.1" width="17" height="0.8999999999999773" fill="steelblue"></rect>
+              <rect class="bar" x="89" y="446.4" width="16" height="3.6000000000000227" fill="steelblue"></rect>
+              <rect class="bar" x="106" y="444.6" width="17" height="5.399999999999977" fill="steelblue"></rect>
+              <rect class="bar" x="124" y="436.5" width="16" height="13.5" fill="steelblue"></rect>
+              <rect class="bar" x="141" y="431.325" width="16" height="18.67500000000001" fill="steelblue"></rect>
+              <rect class="bar" x="158" y="420.075" width="17" height="29.92500000000001" fill="steelblue"></rect>
+              <rect class="bar" x="176" y="406.575" width="16" height="43.42500000000001" fill="steelblue"></rect>
+              <rect class="bar" x="193" y="374.84999999999997" width="17" height="75.15000000000003" fill="steelblue"></rect>
+              <rect class="bar" x="211" y="343.125" width="16" height="106.875" fill="steelblue"></rect>
+              <rect class="bar" x="228" y="305.775" width="16" height="144.22500000000002" fill="steelblue"></rect>
+              <rect class="bar" x="245" y="266.175" width="17" height="183.825" fill="steelblue"></rect>
+              <rect class="bar" x="263" y="194.40000000000003" width="16" height="255.59999999999997" fill="steelblue"></rect>
+              <rect class="bar" x="280" y="145.79999999999998" width="17" height="304.20000000000005" fill="steelblue"></rect>
+              <rect class="bar" x="298" y="98.54999999999998" width="16" height="351.45000000000005" fill="steelblue"></rect>
+              <rect class="bar" x="315" y="75.60000000000002" width="17" height="374.4" fill="steelblue"></rect>
+              <rect class="bar" x="333" y="8.550000000000008" width="16" height="441.45" fill="steelblue"></rect>
+              <rect class="bar" x="350" y="0" width="16" height="450" fill="steelblue"></rect>
+              <rect class="bar" x="367" y="8.550000000000008" width="17" height="441.45" fill="steelblue"></rect>
+              <rect class="bar" x="385" y="23.174999999999997" width="16" height="426.825" fill="steelblue"></rect>
+              <rect class="bar" x="402" y="46.349999999999994" width="17" height="403.65" fill="steelblue"></rect>
+              <rect class="bar" x="420" y="106.64999999999999" width="16" height="343.35" fill="steelblue"></rect>
+              <rect class="bar" x="437" y="148.04999999999998" width="16" height="301.95000000000005" fill="steelblue"></rect>
+              <rect class="bar" x="454" y="190.125" width="17" height="259.875" fill="steelblue"></rect>
+              <rect class="bar" x="472" y="250.64999999999998" width="16" height="199.35000000000002" fill="steelblue"></rect>
+              <rect class="bar" x="489" y="306.9" width="17" height="143.10000000000002" fill="steelblue"></rect>
+              <rect class="bar" x="507" y="335.475" width="16" height="114.52499999999998" fill="steelblue"></rect>
+              <rect class="bar" x="524" y="385.65" width="16" height="64.35000000000002" fill="steelblue"></rect>
+              <rect class="bar" x="541" y="400.95" width="17" height="49.05000000000001" fill="steelblue"></rect>
+              <rect class="bar" x="559" y="416.475" width="16" height="33.52499999999998" fill="steelblue"></rect>
+              <rect class="bar" x="576" y="433.125" width="17" height="16.875" fill="steelblue"></rect>
+              <rect class="bar" x="594" y="439.875" width="16" height="10.125" fill="steelblue"></rect>
+              <rect class="bar" x="611" y="445.05" width="16" height="4.949999999999989" fill="steelblue"></rect>
+              <rect class="bar" x="628" y="447.3" width="17" height="2.6999999999999886" fill="steelblue"></rect>
+              <rect class="bar" x="646" y="448.2" width="16" height="1.8000000000000114" fill="steelblue"></rect>
+              <rect class="bar" x="663" y="448.425" width="17" height="1.5749999999999886" fill="steelblue"></rect>
+              <rect class="bar" x="681" y="449.1" width="16" height="0.8999999999999773" fill="steelblue"></rect>
+              <rect class="bar" x="698" y="450" width="16" height="0" fill="steelblue"></rect>
+              <rect class="bar" x="715" y="449.77500000000003" width="17" height="0.2249999999999659" fill="steelblue"></rect>
+              <rect class="bar" x="733" y="449.77500000000003" width="6" height="0.2249999999999659" fill="steelblue"></rect>
+              <line x1="411" x2="411" y1="0" y2="450" stroke="red" stroke-width="2" stroke-dasharray="4,4"></line>
+            </g>
+          </svg>
+          <!-- 지속가능한 웹개발 가이드라인 -->
+          <div class="mt-5">
+            <h4>지속가능한 웹개발 가이드라인 준수 현황</h4>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>번호</th>
+                  <th>항목</th>
+                  <th>준수여부</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>이미지 최적화</td>
+                  <td>✅</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>캐시 활용</td>
+                  <td>❌</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>불필요한 스크립트 제거</td>
+                  <td>✅</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+  
+          <!-- 에코웹 뱃지 -->
+          <div class="text-center mt-5">
+            <div class="eco-badge">
+              <span>125g of CO2</span>
+              <span>ECO-WEB</span>
+            </div>
+          </div>
+  
+          <!-- 리소스 절감 현황 -->
+          <div class="mt-5">
+            <h4>최적화 전/후 비교</h4>
+            <div class="row">
+              <div class="col-md-6">
+                <h5>Before</h5>
+                <img src="http://127.30.1.28:5501/{{ url_for(%27static%27, filename=%27screenshots/before.png%27) }}" alt="Before" class="image">
+                <p>총 리소스: 3.3MB</p>
+              </div>
+              <div class="col-md-6">
+                <h5>After</h5>
+                <img src="http://127.30.1.28:5501/{{ url_for(%27static%27, filename=%27screenshots/after.png%27) }}" alt="After" class="image">
+                <p>총 리소스: 1.1MB</p>
+              </div>
+            </div>
+          </div>
+          <!-- 인증마크 받기 -->
+          <div class="text-center mt-4">
+            <a href="http://127.30.1.28:5501/" class="btn btn-secondary">다시 입력하기</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+  
+  
+  
+    <script>
+      // 기존 등급 표시 스크립트
+      const grade = "{{ grade }}";
+      const grades = ['A', 'B', 'C', 'D', 'E', 'F'];
+      const gradeBar = document.getElementById('gradeBar');
+      gradeBar.style.width = (grades.indexOf(grade) + 1) * 16.66 + '%';
+      gradeBar.textContent = grade;
+  
+      switch (grade) {
+        case 'A':
+          gradeBar.classList.add('bg-success');
+          break;
+        case 'B':
+          gradeBar.classList.add('bg-info');
+          break;
+        case 'C':
+          gradeBar.classList.add('bg-primary');
+          break;
+        case 'D':
+          gradeBar.classList.add('bg-warning');
+          break;
+        case 'E':
+          gradeBar.classList.add('bg-orange');
+          break;
+        case 'F':
+          gradeBar.classList.add('bg-danger');
+          break;
+      }
+  
+      // 예시 데이터 생성 (파이썬에서 만든 데이터와 유사하게)
+      const existingData = Array.from({
+        length: 25000
+      }, () => d3.randomNormal(500, 100)());
+  
+      // 새로운 URL 데이터
+      const newUrlData = 550;
+  
+      // SVG 크기 설정
+      const svg = d3.select("svg");
+      const margin = {
+        top: 20,
+        right: 20,
+        bottom: 30,
+        left: 40
+      };
+      const width = +svg.attr("width") - margin.left - margin.right;
+      const height = +svg.attr("height") - margin.top - margin.bottom;
+      const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+  
+      // X축 및 Y축 범위 설정
+      const x = d3.scaleLinear()
+        .domain([d3.min(existingData), d3.max(existingData)])
+        .rangeRound([0, width]);
+  
+      const bins = d3.histogram()
+        .domain(x.domain())
+        .thresholds(x.ticks(50))
+        (existingData);
+  
+      const y = d3.scaleLinear()
+        .domain([0, d3.max(bins, d => d.length)])
+        .range([height, 0]);
+  
+      // X축
+      g.append("g")
+        .attr("class", "axis axis--x")
+        .attr("transform", `translate(0,${height})`)
+        .call(d3.axisBottom(x));
+  
+      // Y축
+      g.append("g")
+        .attr("class", "axis axis--y")
+        .call(d3.axisLeft(y));
+  
+      // 히스토그램 막대 추가
+      g.selectAll(".bar")
+        .data(bins)
+        .enter().append("rect")
+        .attr("class", "bar")
+        .attr("x", d => x(d.x0))
+        .attr("y", d => y(d.length))
+        .attr("width", d => x(d.x1) - x(d.x0) - 1)
+        .attr("height", d => height - y(d.length))
+        .attr("fill", "steelblue");
+  
+      // 새로운 URL 데이터를 선으로 표시
+      g.append("line")
+        .attr("x1", x(newUrlData))
+        .attr("x2", x(newUrlData))
+        .attr("y1", 0)
+        .attr("y2", height)
+        .attr("stroke", "red")
+        .attr("stroke-width", 2)
+        .attr("stroke-dasharray", "4,4");
+    </script>
+    <!-- Code injected by live-server -->
+    <script>
+      // <![CDATA[  <-- For SVG support
+      if ('WebSocket' in window) {
+        (function() {
+          function refreshCSS() {
+            var sheets = [].slice.call(document.getElementsByTagName("link"));
+            var head = document.getElementsByTagName("head")[0];
+            for (var i = 0; i < sheets.length; ++i) {
+              var elem = sheets[i];
+              var parent = elem.parentElement || head;
+              parent.removeChild(elem);
+              var rel = elem.rel;
+              if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+              }
+              parent.appendChild(elem);
+            }
+          }
+          var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+          var address = protocol + window.location.host + window.location.pathname + '/ws';
+          var socket = new WebSocket(address);
+          socket.onmessage = function(msg) {
+            if (msg.data == 'reload') window.location.reload();
+            else if (msg.data == 'refreshcss') refreshCSS();
+          };
+          if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+            console.log('Live reload enabled.');
+            sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+          }
+        })();
+      } else {
+        console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+      }
+      // ]]>
+    </script>
+  
+  
+  
+  
+  
+  
+</div>
+  
+  <style>
+    :root {
+      --bs-body-text-align: ;
+      --bs-heading-color: inherit;
+      --bs-box-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+      --bs-border-radius-xxl: 2rem;
+      --bs-border-radius: 0.375rem;
+      --bs-border-color: #dee2e6;
+      --bs-border-width: 1px;
+      --bs-link-hover-color-rgb: 10, 88, 202;
+      --bs-secondary-bg: #e9ecef;
+      --bs-body-bg: #fff;
+      --bs-body-color: #212529;
+      --bs-body-line-height: 1.5;
+      --bs-body-font-weight: 400;
+      --bs-body-font-family: var(--bs-font-sans-serif);
+      --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+  
+    *, ::after, ::before {
+      box-sizing: border-box;
+    }
+  
+    @media (prefers-reduced-motion:no-preference) {
+      :root {
+        scroll-behavior: smooth;
+      }
+    }
+  
+    body {
+      -webkit-tap-highlight-color: transparent;
+      text-size-adjust: 100%;
+      background-color: var(--bs-body-bg);
+      color: var(--bs-body-color);
+      font-family: var(--bs-body-font-family);
+      font-size: 16px;
+      font-weight: var(--bs-body-font-weight);
+      line-height: var(--bs-body-line-height);
+      margin: 0;
+      text-align: var(--bs-body-text-align);
+    }
+  
+    h1 {
+      font-size: 40px;
+    }
+  
+    h3 {
+      font-size: 28px;
+    }
+  
+    h1, h3, h4, h5, p {
+      margin-top: 0;
+    }
+  
+    h1, h3, h4, h5 {
+      color: var(--bs-heading-color);
+      font-weight: 500;
+      line-height: 1.2;
+    }
+  
+    h3, h4, h5 {
+      margin-bottom: .5rem;
+    }
+  
+    @media (min-width: 1200px) {
+      h1 {
+        font-size: 40px;
+      }
+    }
+  
+    @media (min-width: 1200px) {
+      h3 {
+        font-size: 28px;
+      }
+    }
+  
+    h4 {
+      font-size: 24px;
+    }
+  
+    @media (min-width: 1200px) {
+      h4 {
+        font-size: 24px;
+      }
+    }
+  
+    h5 {
+      font-size: 20px;
+    }
+  
+    p {
+      margin-bottom: 1rem;
+    }
+  
+    a:not([href]):not([class]), a:not([href]):not([class]):hover {
+      color: inherit;
+      text-decoration: none;
+    }
+  
+    img, svg {
+      vertical-align: middle;
+    }
+  
+    table {
+      border-collapse: collapse;
+      caption-side: bottom;
+    }
+  
+    th {
+      text-align: -webkit-match-parent;
+    }
+  
+    tbody, th, thead {
+      border: 0 solid;
+      border-color: inherit;
+    }
+  
+    td, tr {
+      border: 0 solid;
+      border-color: inherit;
+    }
+  
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: calc(-.5*var(--bs-gutter-x));
+      margin-right: calc(-.5*var(--bs-gutter-x));
+      margin-top: calc(-1*var(--bs-gutter-y));
+      --bs-gutter-y: 0;
+      --bs-gutter-x: 1.5rem;
+    }
+  
+    .row>* {
+      flex-shrink: 0;
+      margin-top: var(--bs-gutter-y);
+      max-width: 100%;
+      padding-left: calc(var(--bs-gutter-x)*.5);
+      padding-right: calc(var(--bs-gutter-x)*.5);
+      width: 100%;
+    }
+  
+    @media (min-width: 768px) {
+      .col-md-3 {
+        flex: 0 0 auto;
+        width: 25%;
+      }
+  
+      .col-md-6,   .col-md-8 {
+        flex: 0 0 auto;
+        width: 50%;
+      }
+  
+      .col-md-8 {
+        width: 66.6667%;
+      }
+    }
+  
+    .table {
+      border-color: #dee2e6;
+      margin-bottom: 1rem;
+      vertical-align: top;
+      width: 100%;
+      --bs-table-accent-bg: transparent;
+      --bs-table-bg: var(--bs-body-bg);
+      --bs-table-color: var(--bs-body-color);
+      --bs-table-bg-state: initial;
+      --bs-table-color-state: initial;
+      --bs-table-bg-type: initial;
+      --bs-table-color-type: initial;
+    }
+  
+    .table>:not(caption)>*>* {
+      background-color: var(--bs-table-bg);
+      border-bottom-width: var(--bs-border-width);
+      box-shadow: inset 0 0 0 9999px var(--bs-table-bg-state, var(--bs-table-bg-type, var(--bs-table-accent-bg)));
+      color: var(--bs-table-color-state, var(--bs-table-color-type, var(--bs-table-color)));
+      padding: .5rem;
+    }
+  
+    .table>tbody {
+      vertical-align: inherit;
+    }
+  
+    .table>thead {
+      vertical-align: bottom;
+    }
+  
+    .btn, .btn:hover {
+      border-color: #6c757d;
+    }
+  
+    .btn {
+      background-color: var(--bs-btn-bg);
+      border-image: none 100% 1 0 stretch;
+      border-radius: var(--bs-btn-border-radius);
+      border-style: solid;
+      border-width: 1px;
+      color: var(--bs-btn-color);
+      cursor: pointer;
+      display: inline-block;
+      font-family: var(--bs-btn-font-family);
+      font-size: 16px;
+      font-weight: var(--bs-btn-font-weight);
+      line-height: var(--bs-btn-line-height);
+      padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
+      text-align: center;
+      text-decoration: none;
+      transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+      user-select: none;
+      vertical-align: middle;
+      --bs-btn-focus-box-shadow: 0 0 0 0.25rem rgba(var(--bs-btn-focus-shadow-rgb), .5);
+      --bs-btn-disabled-opacity: 0.65;
+      --bs-btn-border-radius: var(--bs-border-radius);
+      --bs-btn-line-height: 1.5;
+      --bs-btn-font-weight: 400;
+      --bs-btn-font-family: ;
+      --bs-btn-padding-y: 0.375rem;
+      --bs-btn-padding-x: 0.75rem;
+      transition-behavior: normal, normal, normal, normal;
+    }
+  
+    @media (prefers-reduced-motion:reduce) {
+      .btn {
+        transition: none 0s;
+        transition-behavior: normal;
+      }
+    }
+  
+    .btn:hover {
+      background-color: var(--bs-btn-hover-bg);
+      color: var(--bs-btn-hover-color);
+    }
+  
+    .btn:focus-visible {
+      background-color: var(--bs-btn-hover-bg);
+      border-color: #6c757d;
+      box-shadow: var(--bs-btn-focus-box-shadow);
+      color: var(--bs-btn-hover-color);
+      outline: 0;
+    }
+  
+    .btn:first-child:active {
+      background-color: var(--bs-btn-active-bg);
+      border-color: #6c757d;
+      color: var(--bs-btn-active-color);
+    }
+  
+    .btn:first-child:active:focus-visible {
+      box-shadow: var(--bs-btn-focus-box-shadow);
+    }
+  
+    .btn:disabled {
+      background-color: var(--bs-btn-disabled-bg);
+      border-color: #6c757d;
+      color: var(--bs-btn-disabled-color);
+      opacity: var(--bs-btn-disabled-opacity);
+      pointer-events: none;
+    }
+  
+    .btn-secondary {
+      --bs-btn-disabled-bg: #6c757d;
+      --bs-btn-disabled-color: #fff;
+      --bs-btn-active-bg: #565e64;
+      --bs-btn-active-color: #fff;
+      --bs-btn-focus-shadow-rgb: 130, 138, 145;
+      --bs-btn-hover-bg: #5c636a;
+      --bs-btn-hover-color: #fff;
+      --bs-btn-bg: #6c757d;
+      --bs-btn-color: #fff;
+    }
+  
+    .progress, .progress-bar {
+      display: flex;
+      overflow: hidden;
+    }
+  
+    .progress {
+      background-color: var(--bs-progress-bg);
+      border-radius: var(--bs-progress-border-radius);
+      font-size: 12px;
+      height: var(--bs-progress-height);
+      --bs-progress-bar-bg: #0d6efd;
+      --bs-progress-bar-color: #fff;
+      --bs-progress-border-radius: var(--bs-border-radius);
+      --bs-progress-bg: var(--bs-secondary-bg);
+      --bs-progress-height: 1rem;
+    }
+  
+    .progress-bar {
+      background-color: var(--bs-progress-bar-bg);
+      transition: width .6s;
+      text-wrap-mode: nowrap;
+      color: var(--bs-progress-bar-color);
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition-behavior: normal;
+      white-space-collapse: collapse;
+    }
+  
+    @media (prefers-reduced-motion:reduce) {
+      .progress-bar {
+        transition: none 0s;
+        transition-behavior: normal;
+      }
+    }
+  
+    .justify-content-center {
+      justify-content: center !important;
+    }
+  
+    .mt-4 {
+      margin-top: 1.5rem !important;
+    }
+  
+    .mt-5 {
+      margin-top: 3rem !important;
+    }
+  
+    .mb-4 {
+      margin-bottom: 1.5rem !important;
+    }
+  
+    .text-center {
+      text-align: center !important;
+    }
+  
+    .eco-badge {
+      background-color: #e8f5e9;
+      border: 1px solid #2e7d32;
+      border-radius: 25px;
+      color: #2e7d32;
+      display: inline-block;
+      padding: 10px 20px;
+    }
+  
+    .carbon-metric {
+      margin: 20px 0;
+      text-align: center;
+    }
+  
+    .carbon-icon {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+  
+    .traffic-container {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1140px;
+      padding-left: 15px;
+      padding-right: 15px;
+      width: 100%;
+    }
+  </style>
+  
